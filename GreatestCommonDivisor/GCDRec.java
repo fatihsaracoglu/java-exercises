@@ -1,0 +1,18 @@
+public class GCDRec {
+
+    public static void main(String[] args) {
+        int a = Integer.parseInt(args[0]);
+        int b = Integer.parseInt(args[1]);
+
+        int gcdivisor = gcd(a > b ? a : b, a > b ? b : a);
+
+        System.out.println("Greatest Common Divisor of " + a + " and " + b + " is " + gcdivisor);
+    }
+
+    public static int gcd(int a, int b) {
+        int remainder = a % b;
+        if (remainder == 0)
+            return b;
+        return gcd(b, remainder);
+    }
+}
